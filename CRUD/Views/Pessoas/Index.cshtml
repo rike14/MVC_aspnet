@@ -1,0 +1,36 @@
+﻿@page
+@model CRUD.Views.Pessoas.IndexModel
+@{
+}
+
+<br />
+
+<h2>Lista de Pessoas</h2>
+
+<a class="btn btn-primary btn-sm" href="/Pessoas/Cadastrar">Cadastrar Pessoa</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>CPF</th>
+            <th>ENDEREÇO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listaPessoas)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nome </td>
+                <td>@item.cpf </td>
+                <td>@item.endereco </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Pessoas/Editar?id=">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="/Pessoas/Excluir?id=">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
