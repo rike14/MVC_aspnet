@@ -348,3 +348,35 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+*.v2
+.vs/CRUD/DesignTimeBuild/.dtbcache.v2
+.vs/CRUD/FileContentIndex/294df89c-48ad-465f-89d3-1a38f4e59124.vsidx
+.vs/CRUD/FileContentIndex/62b38770-18fc-407c-a26d-10800edf4da6.vsidx
+.vs/CRUD/FileContentIndex/6aebbd18-d16d-4436-a149-29a27273dd29.vsidx
+.vs/CRUD/FileContentIndex/f81c7ba3-a9b5-4860-ba75-0d2e2aba0b8f.vsidx
+.vs/CRUD/v17/.suo
+CRUD/bin/Debug/net6.0/CRUD.dll
+CRUD/bin/Debug/net6.0/CRUD.exe
+CRUD/bin/Debug/net6.0/CRUD.pdb
+CRUD/bin/Debug/net6.0/CRUD.staticwebassets.runtime.json
+CRUD/obj/CRUD.csproj.nuget.dgspec.json
+CRUD/obj/CRUD.csproj.nuget.g.props
+CRUD/obj/Debug/net6.0/apphost.exe
+CRUD/obj/Debug/net6.0/CRUD.assets.cache
+CRUD/obj/Debug/net6.0/CRUD.csproj.AssemblyReference.cache
+CRUD/obj/Debug/net6.0/CRUD.csproj.CoreCompileInputs.cache
+CRUD/obj/Debug/net6.0/CRUD.csproj.FileListAbsolute.txt
+CRUD/obj/Debug/net6.0/CRUD.dll
+CRUD/obj/Debug/net6.0/CRUD.GeneratedMSBuildEditorConfig.editorconfig
+CRUD/obj/Debug/net6.0/CRUD.genruntimeconfig.cache
+CRUD/obj/Debug/net6.0/CRUD.pdb
+CRUD/obj/Debug/net6.0/project.razor.vs.json
+CRUD/obj/Debug/net6.0/ref/CRUD.dll
+CRUD/obj/Debug/net6.0/refint/CRUD.dll
+CRUD/obj/Debug/net6.0/staticwebassets.build.json
+CRUD/obj/Debug/net6.0/staticwebassets.development.json
+CRUD/obj/project.assets.json
+CRUD/obj/project.nuget.cache
+*.v2
+*.pdb
+CRUD/obj/project.nuget.cache
