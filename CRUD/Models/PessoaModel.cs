@@ -2,8 +2,9 @@
 
 public class PessoaModel
 {
-    public int Id { get; set; }
-    public string nome { get; set; }
-    public string cpf { get; set; }
-    public string endereco { get; set; }
+    protected int Id { get; set; }
+    public string Nome { get; set; }
+    public string Cpf { get; set; }
+    public string Endereco { get; set; }
+    public List<Telefone> Telefones { get; set; }
 }
