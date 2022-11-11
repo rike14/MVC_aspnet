@@ -13,6 +13,7 @@
             <th>@Html.DisplayNameFor(model => model.Nome)</th>
             <th>@Html.DisplayNameFor(model => model.Cpf)</th>
             <th>@Html.DisplayNameFor(model => model.Endereco)</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,11 @@
                 <td>@Html.DisplayFor(modelItem => item.Nome)</td>
                 <td>@Html.DisplayFor(modelItem => item.Cpf)</td>
                 <td>@Html.DisplayFor(modelItem => item.Endereco)</td>
+                 <td>
+                    <a asp-action="Editar" class="btn btn-primary btn-sm" asp-route-id="@item.Id">Editar</a>
+                    <a asp-action="Detalhes" class="btn btn-info btn-sm" asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Excluir" class="btn btn-danger btn-sm"  asp-route-id="@item.Id">Excluir</a>
+                </td>
             </tr>
         }
     </tbody>

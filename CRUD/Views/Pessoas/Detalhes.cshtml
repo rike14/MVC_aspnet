@@ -1,0 +1,28 @@
+﻿@model CRUD.Models.Pessoa
+@{
+}
+<br />
+<h2>Detalhes</h2>
+
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Cpf)</th>
+            <th>@Html.DisplayNameFor(model => model.Endereco)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+            <td>@Html.DisplayFor(model => model.Nome)</td>
+            <td>@Html.DisplayFor(model => model.Cpf)</td>
+            <td>@Html.DisplayFor(model => model.Endereco)</td>
+            </tr>
+    </tbody>
+</table>
+<br />
+<div>
+    <a class="btn btn-outline-primary btn-sm"  asp-action="Index">Voltar</a>
+</div>

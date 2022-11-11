@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Pessoas\Cadastrar.cshtml.cs" />
+    <Compile Remove="Views\Pessoas\Index.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
   </ItemGroup>
 
