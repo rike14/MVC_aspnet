@@ -1,4 +1,5 @@
 ﻿using CRUD.Models;
+using CRUD.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -15,7 +16,13 @@ namespace CRUD.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var listaPessoas = new List<Pessoa>();
+            listaPessoas.Add(new Pessoa { Nome = "Pessoa 1", Cpf = 11111111111, Endereco = "endereco 1" });
+            listaPessoas.Add(new Pessoa { Nome = "Pessoa 2", Cpf = 11111111111, Endereco = "endereco 1" });
+            listaPessoas.Add(new Pessoa { Nome = "Pessoa 3", Cpf = 11111111111, Endereco = "endereco 1" });
+            listaPessoas.Add(new Pessoa { Nome = "Pessoa 4", Cpf = 11111111111, Endereco = "endereco 1" });
+            listaPessoas.Add(new Pessoa { Nome = "Pessoa 5", Cpf = 11111111111, Endereco = "endereco 1" });
+            return View(listaPessoas);
         }
 
         public IActionResult Cadastrar()

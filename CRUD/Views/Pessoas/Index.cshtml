@@ -1,9 +1,7 @@
-﻿@page
-@model CRUD.Views.Pessoas.IndexModel
+﻿@model IEnumerable<CRUD.Models.Pessoa>
 @{
+    ViewData["Title"] = "Index";
 }
-
-<br />
 
 <h2>Lista de Pessoas</h2>
 
@@ -12,24 +10,18 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>CPF</th>
-            <th>ENDEREÇO</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Cpf)</th>
+            <th>@Html.DisplayNameFor(model => model.Endereco)</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var item in Model.listaPessoas)
+        @foreach(var item in Model)
         {
             <tr>
-                <td>@item.id</td>
-                <td>@item.nome </td>
-                <td>@item.cpf </td>
-                <td>@item.endereco </td>
-                <td>
-                    <a class="btn btn-primary btn-sm" href="/Pessoas/Editar?id=">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="/Pessoas/Excluir?id=">Excluir</a>
-                </td>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cpf)</td>
+                <td>@Html.DisplayFor(modelItem => item.Endereco)</td>
             </tr>
         }
     </tbody>
