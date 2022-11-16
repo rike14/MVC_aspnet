@@ -25,28 +25,26 @@ namespace CRUD.Controllers
             return View(listaPessoas);
         }
 
-        public IActionResult Cadastrar(int id, string nome, long cpf, string endereco)
-        {
-            var listaPessoas = new List<Pessoa>();
-            listaPessoas.Add(new Pessoa { Id = id, Nome = nome, Cpf = cpf, Endereco = endereco });
-            return View();
-        }
-
-        public IActionResult Editar(int id, string nome, long cpf, string endereco)
+        public IActionResult Cadastrar()
         {
             return View();
         }
 
-        public IActionResult Excluir(int id)
-        {   
-           
+        public IActionResult Editar(int id)
+        {
+            var pessoa = new Pessoa { Id = id, Nome = "Pessoa " + id, Cpf = 11111111111, Endereco = "endereco " + id };
+            return View(pessoa);
+        }
+
+        public IActionResult Excluir()
+        {  
             return View();
         }
 
         public IActionResult Detalhes(int id)
-        {
-
-            return View();
+        {   
+            var pessoa = new Pessoa{ Id = id, Nome = "Pessoa " + id, Cpf = 11111111111, Endereco = "endereco " + id };
+            return View(pessoa);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
