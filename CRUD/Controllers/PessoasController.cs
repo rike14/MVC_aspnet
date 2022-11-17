@@ -17,11 +17,9 @@ namespace CRUD.Controllers
         public IActionResult Index()
         {
             var listaPessoas = new List<Pessoa>();
-            listaPessoas.Add(new Pessoa { Id = 1, Nome = "Pessoa 1", Cpf = 11111111111, Endereco = "endereco 1" });
-            listaPessoas.Add(new Pessoa { Id = 2, Nome = "Pessoa 2", Cpf = 11111111111, Endereco = "endereco 1" });
-            listaPessoas.Add(new Pessoa { Id = 3, Nome = "Pessoa 3", Cpf = 11111111111, Endereco = "endereco 1" });
-            listaPessoas.Add(new Pessoa { Id = 4, Nome = "Pessoa 4", Cpf = 11111111111, Endereco = "endereco 1" });
-            listaPessoas.Add(new Pessoa { Id = 5, Nome = "Pessoa 5", Cpf = 11111111111, Endereco = "endereco 1" });
+            listaPessoas.Add(new Pessoa { Id = 1, Nome = "José Roberto", Cpf = 10788936251, Endereco = "Rua Dos Jardins, nº: 431, Bairro: Jardim Primavera, Mauá-SP", DDD_principal = 011, Tel_principal = 987540321, DDD_secundario = 011, Tel_secundario = 997034421 });
+            listaPessoas.Add(new Pessoa { Id = 2, Nome = "Maria da Silva", Cpf = 20896310523, Endereco = "Avenida Brasil, nº: 1321, Bairro: Campo Grande, Rio de Janeiro-RJ", DDD_principal = 021, Tel_principal = 988167890 });
+            listaPessoas.Add(new Pessoa { Id = 3, Nome = "João Paulo", Cpf = 03564232133, Endereco = "Rua Canário, nº: 70, Bairro: Vila Nova, Barueri-SP" , DDD_principal = 011, Tel_principal = 987660911, DDD_secundario = 011, Tel_secundario = 991732234});
             return View(listaPessoas);
         }
 
@@ -32,18 +30,19 @@ namespace CRUD.Controllers
 
         public IActionResult Editar(int id)
         {
-            var pessoa = new Pessoa { Id = id, Nome = "Pessoa " + id, Cpf = 11111111111, Endereco = "endereco " + id };
+            var pessoa = new Pessoa { Id = id, Nome = "João Paulo", Cpf = 03564232133, Endereco = "Rua Canário, nº: 70, Bairro: Vila Nova, Barueri-SP", DDD_principal = 011, Tel_principal = 987660911, DDD_secundario = 011, Tel_secundario = 991732234 };
             return View(pessoa);
         }
 
-        public IActionResult Excluir()
-        {  
-            return View();
+        public IActionResult Excluir(int id)
+        {
+            var pessoa = new Pessoa { Id = id, Nome = "Maria da Silva", Cpf = 20896310523, Endereco = "Avenida Brasil, nº: 1321, Bairro: Campo Grande, Rio de Janeiro-RJ", DDD_principal = 021, Tel_principal = 988167890 };
+            return View(pessoa);
         }
 
         public IActionResult Detalhes(int id)
         {   
-            var pessoa = new Pessoa{ Id = id, Nome = "Pessoa " + id, Cpf = 11111111111, Endereco = "endereco " + id };
+            var pessoa = new Pessoa{ Id = id, Nome = "José Roberto", Cpf = 10788936251, Endereco = "Rua Dos Jardins, nº: 431, Bairro: Jardim Primavera, Mauá-SP", DDD_principal = 011, Tel_principal = 987540321, DDD_secundario = 011, Tel_secundario = 997034421 };
             return View(pessoa);
         }
 

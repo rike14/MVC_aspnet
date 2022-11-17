@@ -18,6 +18,25 @@ namespace CRUD.Models
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [StringLength(150, MinimumLength = 15, ErrorMessage = "{0} tem que ter no mínimo {2} caracteres")]
         public string Endereco { get; set; }
-        //public List<Telefone> Telefones { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [MaxLength(4, ErrorMessage = "O campo {0} deve ser Ex: 011")]
+        [StringLength(3, MinimumLength = 3, ErrorMessage = "O campo {0} deve ser Ex: 011")]
+        public int DDD_principal { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [MaxLength(10, ErrorMessage = "O campo {0} deve ser Ex: 988776655")]
+        [StringLength(9, MinimumLength = 8, ErrorMessage = "O campo {0} deve ser Ex: 988776655")]
+        public long Tel_principal { get; set; }
+
+        
+        [MaxLength(4, ErrorMessage = "O campo {0} deve ser Ex: 011")]
+        [StringLength(3, MinimumLength = 3, ErrorMessage = "O campo {0} deve ser Ex: 011")]
+        public int? DDD_secundario { get; set; }
+
+        
+        [MaxLength(10, ErrorMessage = "O campo {0} deve ser Ex: 988776655")]
+        [StringLength(9, MinimumLength = 8, ErrorMessage = "O campo {0} deve ser Ex: 988776655")]
+        public long? Tel_secundario { get; set; }
     }
 }
