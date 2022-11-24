@@ -1,12 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SistemaTeleatendimento.Models
 {
     public class Telefone
     {
         public int Id { get; set; }
-        public int Numero { get; set; }
-        public int Ddd { get; set; }
+        public int? Numero { get; set; }
+        public int? Ddd { get; set; }
         public TipoTelefone Tipo { get; set; }
         public Pessoa Pessoa { get; set; }
         public int PessoaId { get; set; }
@@ -22,6 +23,10 @@ namespace SistemaTeleatendimento.Models
             Ddd = ddd;
             Tipo = tipo;
             Pessoa = pessoa;
+        }
+        public Telefone(TipoTelefone tipo)
+        {
+            Tipo = tipo;
         }
     }
 }

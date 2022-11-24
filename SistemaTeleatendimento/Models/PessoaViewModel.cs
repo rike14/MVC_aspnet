@@ -20,5 +20,9 @@ namespace SistemaTeleatendimento.Models
 
             throw new ArgumentException("Propriedade não encontrada");
         }
+        public string teste()
+        {
+            return "12";
+        }
     }
 }

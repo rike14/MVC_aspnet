@@ -48,6 +48,10 @@ namespace SistemaTeleatendimento.Controllers
         {
             var PessoaViewModel = new PessoaViewModel();
             PessoaViewModel.TiposTelefone = await _context.TipoTelefone.ToListAsync();
+            foreach (TipoTelefone item in PessoaViewModel.TiposTelefone)
+            {
+                PessoaViewModel.Telefones.Add(new Telefone(item));
+            }
 
             return View(PessoaViewModel);
         }
@@ -55,16 +59,16 @@ namespace SistemaTeleatendimento.Controllers
         // POST: Pessoas/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Cpf,Endereco")] Pessoa pessoa, [Bind("ddd,numero")] Telefone telefone)
+        public async Task<IActionResult> Create(PessoaViewModel pessoaViewModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pessoa);
-                _context.Add(telefone);
+                _context.Add(pessoaViewModel.Pessoa);
+                _context.Add(pessoaViewModel.Telefone);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(pessoa);
+            return View(pessoaViewModel);
         }
 
         public async Task<IActionResult> Edit(int? id)

@@ -12,8 +12,6 @@ namespace SistemaTeleatendimento.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [MaxLength(12, ErrorMessage = "O campo {0} não pode ser maior que {1} números")]
-        [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo{0} tem que ter {1} números")]
         public long Cpf { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
