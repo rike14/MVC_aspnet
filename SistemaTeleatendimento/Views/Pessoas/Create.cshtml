@@ -1,0 +1,74 @@
+﻿@model SistemaTeleatendimento.Models.PessoaViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Cadastrar Pessoa</h2>
+<div class="col-md-8">
+    <form asp-action="Create">
+        <div class="row">
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-md-9">
+                <label asp-for="Pessoa.Nome" class="control-label"></label>
+                <input asp-for="Pessoa.Nome" class="form-control" value="Nome teste 1"/>
+                <span asp-validation-for="Pessoa.Nome" class="text-danger" asp-for="Pessoa.Nome"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-9">
+                <label asp-for="Pessoa.Cpf" class="control-label"></label>
+                <input asp-for="Pessoa.Cpf" class="form-control" maxlength="11" value="12345678910"/>
+                <span asp-validation-for="Pessoa.Cpf" class="text-danger" asp-for="Cpf"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-9">
+                <label asp-for="Pessoa.Endereco" class="control-label"></label>
+                <input asp-for="Pessoa.Endereco" class="form-control" value="1111111111111111111111"/>
+                <span asp-validation-for="Pessoa.Endereco" class="text-danger" asp-for="Pessoa.Endereco"></span>
+            </div>
+        </div>
+        
+        
+        
+            
+        @foreach (var item in Model.TiposTelefone)
+        {
+            <div class="row">
+
+                <div class="form-group col-md-12">Telefone @Html.DisplayFor(modelItem => item.Tipo)</div>
+                <div class="form-group col-md-3">
+                    <label asp-for="Telefone.Ddd" class="control-label"></label>
+                    <input asp-for="Telefone.Ddd" class="form-control" />
+                    <span asp-validation-for="Telefone.Ddd" class="text-danger" asp-for="Telefone.Ddd"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Telefone.Numero" class="control-label"></label>
+                    <input asp-for="Telefone.Numero" class="form-control" />
+                    <span asp-validation-for="Telefone.Numero" class="text-danger" asp-for="Telefone.Numero"></span>
+                </div>
+            </div>
+        }
+
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+            <a class="btn btn-outline-primary btn-sm" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
