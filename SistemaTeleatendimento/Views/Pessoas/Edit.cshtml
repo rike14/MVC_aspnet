@@ -4,9 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Editar</h1>
+<h1>Editar Paciente</h1>
 
-<h4>Paciente</h4>
 <hr />
 <div class="col-md-8">
     <form asp-action="Edit">
@@ -16,14 +15,14 @@
         
         <div class="row">
             <div class="form-group col-md-9">
-                <label asp-for="Pessoa.Nome" class="control-label"></label>
+                <label asp-for="Pessoa.Nome" class="control-label">Nome Completo</label>
                 <input asp-for="Pessoa.Nome" class="form-control" />
                 <span asp-validation-for="Pessoa.Nome" class="text-danger" asp-for="Pessoa.Nome"></span>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-9">
-                <label asp-for="Pessoa.Cpf" class="control-label"></label>
+                <label asp-for="Pessoa.Cpf" class="control-label">CPF</label>
                 <input asp-for="Pessoa.Cpf" class="form-control" maxlength="11" />
                 <span asp-validation-for="Pessoa.Cpf" class="text-danger" asp-for="Cpf"></span>
             </div>
@@ -32,43 +31,43 @@
         <div class="row">
             <div class="form-group col-md-12">Endereço: </div>
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Logadouro" class="control-label"></label>
+                <label asp-for="Endereco.Logadouro" class="control-label">Logradouro</label>
                 <input asp-for="Endereco.Logadouro" class="form-control" />
                 <span asp-validation-for="Endereco.Logadouro" class="text-danger" asp-for="Endereco.Logadouro"></span>
             </div>
 
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Numero" class="control-label"></label>
+                <label asp-for="Endereco.Numero" class="control-label">Nº</label>
                 <input asp-for="Endereco.Numero" class="form-control" />
                 <span asp-validation-for="Endereco.Numero" class="text-danger" asp-for="Endereco.Numero"></span>
             </div>
 
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Complemento" class="control-label"></label>
+                <label asp-for="Endereco.Complemento" class="control-label">Complemento</label>
                 <input asp-for="Endereco.Complemento" class="form-control" />
                 <span asp-validation-for="Endereco.Complemento" class="text-danger" asp-for="Endereco.Complemento"></span>
             </div>
 
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Bairro" class="control-label"></label>
+                <label asp-for="Endereco.Bairro" class="control-label">Bairro</label>
                 <input asp-for="Endereco.Bairro" class="form-control" />
                 <span asp-validation-for="Endereco.Bairro" class="text-danger" asp-for="Endereco.Bairro"></span>
             </div>
 
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Cidade" class="control-label"></label>
+                <label asp-for="Endereco.Cidade" class="control-label">Cidade</label>
                 <input asp-for="Endereco.Cidade" class="form-control" />
                 <span asp-validation-for="Endereco.Cidade" class="text-danger" asp-for="Endereco.Cidade"></span>
             </div>
 
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Estado" class="control-label"></label>
+                <label asp-for="Endereco.Estado" class="control-label">Estado(UF)</label>
                 <input asp-for="Endereco.Estado" class="form-control" />
                 <span asp-validation-for="Endereco.Estado" class="text-danger" asp-for="Endereco.Estado"></span>
             </div>
 
             <div class="form-group col-md-9">
-                <label asp-for="Endereco.Cep" class="control-label"></label>
+                <label asp-for="Endereco.Cep" class="control-label">CEP</label>
                 <input asp-for="Endereco.Cep" class="form-control" />
                 <span asp-validation-for="Endereco.Cep" class="text-danger" asp-for="Endereco.Cep"></span>
             </div>
@@ -82,21 +81,21 @@
                 <span asp-validation-for="TelefonePrimario.Ddd" class="text-danger"></span>
             </div>
             <div class="form-group col-md-6">
-                <label asp-for="TelefonePrimario.Numero" class="control-label"></label>
+                <label asp-for="TelefonePrimario.Numero" class="control-label">Telefone</label>
                 <input asp-for="TelefonePrimario.Numero" class="form-control" />
                 <span asp-validation-for="TelefonePrimario.Numero" class="text-danger"></span>
             </div>
         </div>
 
         <div class="row">
-            <div class="form-group col-md-12">Telefone Secundario (Opcional):</div>
+            <div class="form-group col-md-12">Telefone Secundário (Opcional):</div>
             <div class="form-group col-md-3">
                 <label asp-for="TelefoneSecundario.Ddd" class="control-label">DDD</label>
                 <input asp-for="TelefoneSecundario.Ddd" class="form-control" />
                 <span asp-validation-for="TelefoneSecundario.Ddd" class="text-danger"></span>
             </div>
             <div class="form-group col-md-6">
-                <label asp-for="TelefoneSecundario.Numero" class="control-label"></label>
+                <label asp-for="TelefoneSecundario.Numero" class="control-label">Telefone</label>
                 <input asp-for="TelefoneSecundario.Numero" class="form-control" />
                 <span asp-validation-for="TelefoneSecundario.Numero" class="text-danger"></span>
             </div>

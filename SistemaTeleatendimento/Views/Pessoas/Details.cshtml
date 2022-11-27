@@ -7,39 +7,37 @@
 <h1>Detalhes</h1>
 
 <div>
-    <h4>Pessoa</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pessoa.Nome)
+           Nome Completo:
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Pessoa.Nome)
         </dd>
 
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pessoa.Cpf)
+           CPF:
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Pessoa.Cpf)
         </dd>
 
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pessoa.Endereco)
+           Endereço:
         </dt>
         <dd class = "col-sm-10">
             @Model.Endereco.ToString()
         </dd>
 
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TelefonePrimario)
+           Telefone Principal:
         </dt>
         <dd class = "col-sm-10">
             @Model.TelefonePrimario.ToString()
         </dd>
 
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TelefoneSecundario)
+            Telefone Secundário:
         </dt>
         <dd class = "col-sm-10">
             @{
