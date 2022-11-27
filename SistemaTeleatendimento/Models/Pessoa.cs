@@ -14,21 +14,18 @@ namespace SistemaTeleatendimento.Models
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public long Cpf { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(150, MinimumLength = 15, ErrorMessage = "{0} tem que ter no mínimo {2} caracteres")]
-        public string Endereco { get; set; }
+        public Endereco Endereco { get; set; }
         public ICollection<Telefone> Telefones { get; set; } = new List<Telefone>();
 
         public Pessoa()
         {
         }
 
-        public Pessoa(int id, string nome, long cpf, string endereco)
+        public Pessoa(int id, string nome, long cpf)
         {
             Id = id;
             Nome = nome;
             Cpf = cpf;
-            Endereco = endereco;
         }
     }
 }

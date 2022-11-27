@@ -17,6 +17,44 @@ namespace SistemaTeleatendimento.Migrations
                 .HasAnnotation("ProductVersion", "3.1.30")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("SistemaTeleatendimento.Models.Endereco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Cep")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Complemento")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Logadouro")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PessoaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PessoaId")
+                        .IsUnique();
+
+                    b.ToTable("Endereco");
+                });
+
             modelBuilder.Entity("SistemaTeleatendimento.Models.Pessoa", b =>
                 {
                     b.Property<int>("Id")
@@ -24,13 +62,7 @@ namespace SistemaTeleatendimento.Migrations
                         .HasColumnType("int");
 
                     b.Property<long>("Cpf")
-                        .HasColumnType("bigint")
-                        .HasMaxLength(11);
-
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4")
-                        .HasMaxLength(150);
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -48,16 +80,16 @@ namespace SistemaTeleatendimento.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Ddd")
+                    b.Property<int?>("Ddd")
                         .HasColumnType("int");
 
-                    b.Property<int>("Numero")
+                    b.Property<int?>("Numero")
                         .HasColumnType("int");
 
                     b.Property<int>("PessoaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TipoId")
+                    b.Property<int>("TipoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -83,6 +115,15 @@ namespace SistemaTeleatendimento.Migrations
                     b.ToTable("TipoTelefone");
                 });
 
+            modelBuilder.Entity("SistemaTeleatendimento.Models.Endereco", b =>
+                {
+                    b.HasOne("SistemaTeleatendimento.Models.Pessoa", "Pessoa")
+                        .WithOne("Endereco")
+                        .HasForeignKey("SistemaTeleatendimento.Models.Endereco", "PessoaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("SistemaTeleatendimento.Models.Telefone", b =>
                 {
                     b.HasOne("SistemaTeleatendimento.Models.Pessoa", "Pessoa")
@@ -93,7 +134,9 @@ namespace SistemaTeleatendimento.Migrations
 
                     b.HasOne("SistemaTeleatendimento.Models.TipoTelefone", "Tipo")
                         .WithMany()
-                        .HasForeignKey("TipoId");
+                        .HasForeignKey("TipoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

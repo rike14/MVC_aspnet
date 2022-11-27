@@ -14,15 +14,16 @@ namespace SistemaTeleatendimento.Data
 
         public void Seed()
         {
-            if (_context.Pessoa.Any() || _context.Telefone.Any() || _context.TipoTelefone.Any()) return;
+            if (_context.Pessoa.Any() || _context.Endereco.Any() || _context.Telefone.Any() || _context.TipoTelefone.Any()) return;
 
             var TipoTelefonePrincipal = new TipoTelefone(1, "Principal");
             var TipoTelefoneSegundario = new TipoTelefone(2, "Segundario");
             _context.TipoTelefone.AddRange(TipoTelefonePrincipal,TipoTelefoneSegundario);
 
+
             for(int i = 1; i < 5; i++)
             {
-                var pessoa = new Pessoa(i, "Pessoa " + i, 10020030040 + i, "Rua " + i);
+                var pessoa = new Pessoa(i, "Pessoa " + i, 10020030040 + i);
                 _context.Pessoa.Add(pessoa);
                 _context.Telefone.Add(
                                       new Telefone(
@@ -31,6 +32,7 @@ namespace SistemaTeleatendimento.Data
                                         pessoa
                                       )
                                      );
+                _context.Endereco.Add(new Endereco("Rau teste", 1, 123456, "Bairro teste", "Cidade teste", "TS", pessoa));
             }
             _context.SaveChanges();
         }

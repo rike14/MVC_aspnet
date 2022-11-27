@@ -16,29 +16,41 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Pessoa.Nome)
         </dd>
+
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Pessoa.Cpf)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Pessoa.Cpf)
         </dd>
+
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Pessoa.Endereco)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pessoa.Endereco)
+            @Model.Endereco.ToString()
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefonePrimario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.TelefonePrimario.ToString()
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefoneSecundario)
+        </dt>
+        <dd class = "col-sm-10">
+            @{
+                if(Model.TelefoneSecundario != null)
+                {
+                    Model.TelefoneSecundario.ToString();
+                }
+            }
         </dd>
     </dl>
 
-    <dl class="row">
-        @foreach (var item in Model.Telefones) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero)
-            </td>
-        </tr>
-}
-    </dl>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Pessoa.Id">Edit</a> |
