@@ -28,6 +28,7 @@
         </div>
 
         <div class="row">
+            <div class="form-group col-md-12">Endereço: </div>
             <div class="form-group col-md-9">
                 <label asp-for="Endereco.Logadouro" class="control-label"></label>
                 <input asp-for="Endereco.Logadouro" class="form-control"/>
@@ -72,7 +73,7 @@
         </div>
 
         <div class="row">
-            <div class="form-group col-md-12">Telefone Principal </div>
+            <div class="form-group col-md-12">Telefone Principal: </div>
             <div class="form-group col-md-3">
                 <label asp-for="TelefonePrimario.Ddd" class="control-label"></label>
                 <input asp-for="TelefonePrimario.Ddd" class="form-control" />
@@ -86,7 +87,7 @@
         </div>
 
         <div class="row">
-            <div class="form-group col-md-12">Telefone Secundario (Opcional)</div>
+            <div class="form-group col-md-12">Telefone Secundario (Opcional):</div>
             <div class="form-group col-md-3">
                 <label asp-for="TelefoneSecundario.Ddd" class="control-label"></label>
                 <input asp-for="TelefoneSecundario.Ddd" class="form-control" />
@@ -101,15 +102,10 @@
         
         <br />
         <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+            <input type="submit" value="Cadastrar" class="btn btn-primary btn-sm" />
             <a class="btn btn-outline-primary btn-sm" asp-action="Index">Voltar</a>
         </div>
     </form>
-</div>
-
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

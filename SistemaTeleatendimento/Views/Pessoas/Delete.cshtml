@@ -4,18 +4,56 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Excluir</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Pessoa</h4>
+    <h4>Paciente</h4>
     <hr />
     <dl class="row">
-        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pessoa.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pessoa.Cpf)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Cpf)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pessoa.Endereco)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Endereco.ToString()
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefonePrimario)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.TelefonePrimario.ToString()
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TelefoneSecundario)
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                if (Model.TelefoneSecundario != null)
+                {
+                    Model.TelefoneSecundario.ToString();
+                }
+            }
+        </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Excluir" class="btn btn-danger"/> |
+        <a asp-action="Index" class="btn btn-outline-primary btn-sm">Voltar</a>
     </form>
 </div>
