@@ -1,0 +1,57 @@
+﻿@model SistemaTeleatendimento.Models.PessoaViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Excluir</h1>
+
+<h3>Tem certeza que deseja excluir esse paciente?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome Completo:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+
+        <dt class="col-sm-2">
+           CPF:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Cpf)
+        </dd>
+
+        <dt class="col-sm-2">
+           Endereço:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Endereco.ToString()
+        </dd>
+
+        <dt class="col-sm-2">
+          Telefone Principal:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.TelefonePrimario.ToString()
+        </dd>
+
+        <dt class="col-sm-2">
+           Telefone Secundário:
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                if (Model.TelefoneSecundario != null)
+                {
+                    Model.TelefoneSecundario.ToString();
+                }
+            }
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Excluir" class="btn btn-danger"/> |
+        <a asp-action="Index" class="btn btn-outline-primary btn-sm">Voltar</a>
+    </form>
+</div>

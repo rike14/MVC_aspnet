@@ -1,0 +1,56 @@
+﻿@model SistemaTeleatendimento.Models.PessoaViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Nome Completo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+
+        <dt class = "col-sm-2">
+           CPF:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Cpf)
+        </dd>
+
+        <dt class = "col-sm-2">
+           Endereço:
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Endereco.ToString()
+        </dd>
+
+        <dt class = "col-sm-2">
+           Telefone Principal:
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.TelefonePrimario.ToString()
+        </dd>
+
+        <dt class = "col-sm-2">
+            Telefone Secundário:
+        </dt>
+        <dd class = "col-sm-10">
+            @{
+                if(Model.TelefoneSecundario != null)
+                {
+                    Model.TelefoneSecundario.ToString();
+                }
+            }
+        </dd>
+    </dl>
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Pessoa.Id" class="btn btn-success btn-sm">Editar</a> |
+    <a asp-action="Index" class="btn btn-outline-primary btn-sm">Voltar</a>
+</div>
